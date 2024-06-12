@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>MBTI application</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <section></section>
+    <header>
+      <div class="img-logo">
+        <img src="logo1.png" alt="Logo" class="logo" />
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#survey">Survey</a>
+        <a href="#price">Price</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+    </header>
+    <section class="section section1" id="home">
+      <h1>MBTI Game</h1>
+      <h2>
+        Discover Your True Self! <br />
+        Play the MBTI Personality Game Today <br />
+        and Unlock Your Potential!
+      </h2>
+      <button class="btn-play">Play</button>
+    </section>
+    <section class="sectionAdd hidden" id="play">
+      <h1 class="letsPlay">Let's play</h1>
+      <h2 class="pickColor">Pick the colors you prefer.</h2>
+      <ul class="colorBox">
+        <li class="color-btn-containter">
+          <div class="color-container color-EI" data-count="1">
+            <div class="color color-extra" data-value="E"></div>
+            <div class="color color-intro" data-value="I"></div>
+          </div>
+          <div class="next">Next</div>
+        </li>
+        <li class="color-btn-containter hiddenColor">
+          <div class="color-container color-SN" data-count="2">
+            <div class="color color-sensor" data-value="S"></div>
+            <div class="color color-intuitive" data-value="N"></div>
+          </div>
+          <div class="next">Next</div>
+        </li>
+        <li class="color-btn-containter hiddenColor">
+          <div class="color-container color-TF" data-count="3">
+            <div class="color color-thinker" data-value="T"></div>
+            <div class="color color-feeler" data-value="F"></div>
+          </div>
+          <div class="next">Next</div>
+        </li>
+        <li class="color-btn-containter hiddenColor">
+          <div class="color-container color-JP" data-count="4">
+            <div class="color color-judger" data-value="J"></div>
+            <div class="color color-perceiver" data-value="P"></div>
+          </div>
+          <div class="next">Next</div>
+        </li>
+      </ul>
+      <div class="chosenColors">
+        <div class="chosenColor chosenEI" data-count="1"></div>
+        <div class="chosenColor chosenSN" data-count="2"></div>
+        <div class="chosenColor chosenTF" data-count="3"></div>
+        <div class="chosenColor chosenJP" data-count="4"></div>
+      </div>
+      <div class="result">
+        <h1>Result Analysis</h1>
+        <table class="resultTable">
+          <tr>
+            <th style="width: 25%">M</th>
+            <th style="width: 25%">B</th>
+            <th style="width: 25%">T</th>
+            <th style="width: 25%">I</th>
+          </tr>
+          <tr class="table-color">
+            <td>color</td>
+            <td>color</td>
+            <td>color</td>
+            <td>color</td>
+          </tr>
+          <tr class="table-content">
+            <td>
+              <ul>
+                <li>
+                  <p>
+                    this is a long story to tell I do not know where to start
+                  </p>
+                </li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section class="section section2" id="about">
+      <h1>Hellow World!</h1>
+    </section>
+    <section class="section section3" id="survey">
+      <h1>Hellow World!</h1>
+    </section>
+    <section class="section section4" id="price">
+      <h1>Hellow World!</h1>
+    </section>
+    <section class="section section5" id="gallery">
+      <h1>Hellow World!</h1>
+    </section>
+  </body>
+</html>

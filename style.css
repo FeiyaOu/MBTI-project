@@ -1,0 +1,313 @@
+:root {
+  --color-background: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  /* position: relative; */
+  background-color: var(--color-background);
+}
+header {
+  position: fixed;
+
+  width: 100%; /* this is very important!*/
+  height: 10rem;
+  display: flex;
+  flex-direction: row;
+
+  font-size: 3rem;
+  justify-content: space-between;
+  /* z-index: 100; */
+}
+
+.img-logo {
+  /* border: 1px solid black; */
+  /* background-image: url(./logo.png);
+  background-size: contain;
+  */
+  height: 10rem;
+  width: auto;
+}
+img {
+  height: 10rem;
+}
+nav {
+  /* background-color: green; */
+
+  display: flex;
+}
+
+nav a {
+  color: white;
+  padding: 3rem;
+  text-decoration: none;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  padding-top: 10%;
+}
+.section1 {
+  background-color: skyblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section2 {
+  padding-top: 18%;
+  background-color: lightsalmon;
+}
+.section3 {
+  padding-top: 18%;
+  background-color: lightseagreen;
+}
+.section4 {
+  padding-top: 18%;
+  background-color: purple;
+}
+.section5 {
+  padding-top: 18%;
+  background-color: lightpink;
+}
+
+.sectionAdd {
+  width: 100%;
+  padding-top: 15%;
+  background-color: pink;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+  /* padding-top: 12%; */
+  /*not using margin-top, 
+  it will create space between h1 and last section*/
+  /* border: 1px solid black; */
+}
+
+h2 {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 5%;
+  line-height: 1.5;
+}
+
+.btn-play {
+  width: 10rem;
+  height: 10rem;
+  font-size: 3rem;
+  background-color: lightskyblue;
+  color: white;
+  margin-top: 3rem;
+  border: 0.5rem solid white;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+.btn-play:hover {
+  background-color: white;
+  color: lightskyblue;
+}
+.color {
+  width: 20rem;
+  height: 20rem;
+  transition: all 0.5s;
+  transition-timing-function: cubic-bezier(0.1, 0.5, 1, 0.5, 0.1);
+  cursor: pointer;
+}
+.color:hover {
+  transform: scale(1.1);
+  box-shadow: 0.5rem 0.5rem 0.2rem 0.2rem rgba(61, 61, 61, 0.5);
+  border-radius: 10%;
+}
+
+.colorBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.color-btn-containter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+.color-container {
+  margin: 2rem;
+  display: flex;
+  flex: row;
+  justify-content: center;
+}
+
+.hiddenColor {
+  display: none;
+}
+.color-extra {
+  background-color: orangered;
+}
+
+.color-intro {
+  background-color: purple;
+  margin-left: 4rem;
+}
+
+.color-sensor {
+  background-color: rgb(100, 179, 100);
+}
+
+.color-intuitive {
+  background-color: rgb(236, 146, 93);
+  margin-left: 4rem;
+}
+
+.color-thinker {
+  background-color: rgb(60, 91, 247);
+  /* margin-left: 4rem; */
+}
+.color-feeler {
+  background-color: rgb(248, 134, 246);
+  margin-left: 4rem;
+}
+.color-judger {
+  background-color: rgb(247, 123, 96);
+  /* margin-left: 4rem; */
+}
+.color-perceiver {
+  background-color: rgb(169, 195, 109);
+  margin-left: 4rem;
+}
+
+.next {
+  width: 8rem;
+  background-color: black;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.chosenColors {
+  width: 10rem;
+  height: auto;
+  /* border: 0.5rem solid black; */
+  background-color: rgb(56, 56, 56);
+  position: absolute;
+  right: 10%;
+  top: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chosenEI {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  border: 1.5rem solid pink;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+.chosenSN {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  border: 1.5rem solid pink;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+.chosenTF {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  border: 1.5rem solid pink;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+.chosenJP {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  border: 1.5rem solid pink;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+.result {
+  width: 80%;
+  background-color: lightseagreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resultTable {
+  width: 100%;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  /* border: 0.3rem solid white;
+} */
+}
+table,
+th,
+td {
+  border: 0.3rem solid white;
+  border-collapse: collapse;
+}
+
+th {
+  font-size: 5rem;
+}
+
+td {
+  font-size: 2rem;
+}
+
+ul {
+  text-align: left;
+  padding-left: 1rem;
+  list-style-position: inside;
+  /* word-wrap: break-word;
+  overflow-wrap: break-word; */
+}
+@media screen and (max-width: 800px) {
+  header {
+    /* height: 10rem; */
+    /* display: flex; */
+    font-size: 2rem;
+    /* overflow: hidden; */
+  }
+
+  nav a {
+    color: white;
+    padding: 1rem;
+  }
+
+  img {
+    scale: 0.5;
+  }
+}
