@@ -4,11 +4,76 @@ const sectionPlay = document.querySelector("#play");
 const colorSN = document.querySelector(".color-SN");
 const colorEI = document.querySelector(".color-EI");
 const colorContainer = document.querySelectorAll(".color-container");
+const colorBtnContainers = document.querySelectorAll(".color-btn-containter");
 const colorBox = document.querySelector(".colorBox");
 const letsPlay = document.querySelector(".letsPlay");
 const pickColor = document.querySelector(".pickColor");
 const chosenColors = document.querySelectorAll(".chosenColor");
 const chosenColorBox = document.querySelector(".chosenColors");
+const typeEI = document.querySelector(".tableInfo-typeEI");
+const typeSN = document.querySelector(".tableInfo-typeSN");
+const typeTF = document.querySelector(".tableInfo-typeTF");
+const typeJP = document.querySelector(".tableInfo-typeJP");
+const tableTypes = document.querySelectorAll(".table-type");
+const tableColors = document.querySelectorAll(".table-color");
+const tableContent = document.querySelectorAll(".table-content");
+const resultTable = document.querySelector(".result");
+const GameMessage1 = document.querySelector(".letsPlay").textContent;
+const GameMessage2 = document.querySelector(".pickColor").textContent;
+
+const tableContentDetails = [
+  [
+    {
+      type: "E",
+      description: `Extraverts are energized by 
+social interactions and enjoy engaging with a wide range of 
+people and activities.`,
+    },
+    {
+      type: "I",
+      description: `Introverts recharge by spending 
+  time alone and prefer deep, meaningful conversations 
+  over large social gatherings.`,
+    },
+  ],
+  [
+    {
+      type: "S",
+      description: `Sensors focus on the present and 
+    concrete details, preferring to deal with information that 
+    is tangible and practical.`,
+    },
+    {
+      type: "N",
+      description: `Intuitives are future-oriented 
+    and enjoy thinking about possibilities and abstract concepts.`,
+    },
+  ],
+  [
+    {
+      type: "T",
+      description: `Thinkers prioritize logic and objectivity,
+       making decisions based on facts and rational analysis.`,
+    },
+    {
+      type: "F",
+      description: `Feelers prioritize harmony and empathy, 
+    making decisions based on values and the impact on others.`,
+    },
+  ],
+  [
+    {
+      type: "J",
+      description: `Judgers prefer structure and organization, enjoying 
+    plans and schedules that allow them to control and predict their environment.`,
+    },
+    {
+      type: "P",
+      description: `Perceivers prefer flexibility and spontaneity, 
+    enjoying an open-ended approach that allows them to adapt to new information.`,
+    },
+  ],
+];
 
 // const nextBtn = document.querySelectorAll(".next");
 // btnPlay.addEventListener("click", function (e) {
@@ -29,7 +94,27 @@ btnPlay.addEventListener("click", function (e) {
   e.preventDefault();
 
   sectionPlay.classList.remove("hidden");
-  colorSN.classList.add("hidden");
+  colorBtnContainers.forEach((cbc) => {
+    if (cbc.dataset.count !== "1") {
+      cbc.classList.add("hiddenColor");
+    }
+  });
+
+  const a1 = Array.from(colorBtnContainers);
+  const colorBtnContainerEI = a1.find(
+    (div) => div.getAttribute("data-count") === "1"
+  );
+
+  colorBtnContainerEI.classList.remove("hiddenColor");
+
+  // colorSN.classList.add("hidden");
+  chosenColorBox.style.display = "";
+  changeInfo(letsPlay, GameMessage1);
+  changeInfo(pickColor, GameMessage2);
+  messageGame.remove();
+  resultTable.classList.add("hiddenTable");
+
+  chosenColors.forEach((cc) => (cc.style.backgroundColor = "black"));
 
   sectionPlay.scrollIntoView();
 });
@@ -68,6 +153,33 @@ colorContainer.forEach((c) =>
     //   e.currenTarget.nextElementSibling.textContent = "Result";
     // }//not knowing why this does not work
 
+    tableTypes.forEach((t) => {
+      if (t.dataset.count === e.currentTarget.dataset.count) {
+        t.textContent = e.target.dataset.value;
+        t.style.color = message2;
+      }
+    });
+
+    tableColors.forEach((cl) => {
+      if (cl.dataset.count === e.currentTarget.dataset.count) {
+        cl.style.backgroundColor = message2;
+        cl.textContent = e.target.dataset.info;
+      }
+    });
+
+    // const t1 = tableContentDetails[+e.currentTarget.dataset.count - 1];
+    // console.log(t1);
+
+    tableContent.forEach((tc) => {
+      if (tc.dataset.count === e.currentTarget.dataset.count) {
+        const t1 = tableContentDetails[+e.currentTarget.dataset.count - 1];
+        const t2 = t1.flat();
+        const t3 = t2.find((obj) => obj.type === e.target.dataset.value);
+        console.log(t3);
+        tc.textContent = t3.description;
+      }
+    });
+
     const nextBtn = e.currentTarget.nextElementSibling;
     console.log(nextBtn.textContent);
     moveNext(nextBtn, ".color-btn-containter", "hiddenColor");
@@ -87,6 +199,7 @@ const moveNext = function (nextBtn, parentContainer, styleAdd) {
       showInfo(colorBox, messageGame);
       // nextBtn.closest(".chosenColors").style.display = "none";
       chosenColorBox.style.display = "none";
+      resultTable.classList.remove("hiddenTable");
     }
     nextBtn
       .closest(parentContainer)
@@ -117,6 +230,10 @@ const changeInfo = function (box, message = "") {
 
 const showInfo = function (box, message) {
   box.append(message);
+};
+
+const hideInfo = function (box, message) {
+  box.removeChild(message);
 };
 
 // window.addEventListener("DOMContentLoaded", function () {
