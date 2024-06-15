@@ -20,6 +20,7 @@ const tableContent = document.querySelectorAll(".table-content");
 const resultTable = document.querySelector(".result");
 const GameMessage1 = document.querySelector(".letsPlay").textContent;
 const GameMessage2 = document.querySelector(".pickColor").textContent;
+const btnSurvey = document.querySelector(".btn-survey");
 
 const tableContentDetails = [
   [
@@ -244,3 +245,56 @@ const hideInfo = function (box, message) {
 //     behavior: "smooth",
 //   });
 // });
+/////////////
+//survey slider
+
+btnSurvey.addEventListener("click", function () {
+  btnSurvey.closest(".surveyInvite").classList.add("hiddenSurvey");
+  btnSurvey.parentElement.nextElementSibling.classList.remove("hiddenSurvey");
+});
+
+//slide effect
+const surveyQs = document.querySelectorAll(".survey-question");
+const btnL = document.querySelector(".survey-btn-left");
+const btnR = document.querySelector(".survey-btn-right");
+const btnSubmit = document.querySelector(".survey-submit");
+
+const slidesMove = function (clickCount) {
+  surveyQs.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - clickCount)}%)`) //not 100*${i} but ${100*i}
+  );
+};
+
+slidesMove(0);
+
+let currclick = 0;
+const maxclick = surveyQs.length;
+
+const nextSlide = function () {
+  if (currclick === maxclick - 1) {
+    currclick = maxclick - 1;
+  } else if (currclick === maxclick - 2) {
+    btnSubmit.classList.remove("hiddenSurvey");
+    currclick++;
+  } else {
+    currclick++;
+  }
+  slidesMove(currclick);
+};
+
+const previousSlide = function () {
+  if (currclick === 0) {
+    currclick = 0;
+  } else {
+    currclick--;
+  }
+  slidesMove(currclick);
+};
+
+btnL.addEventListener("click", previousSlide);
+btnR.addEventListener("click", nextSlide);
+
+btnSubmit.addEventListener("click", function () {
+  btnSubmit.parentElement.classList.add("hiddenSurvey");
+  btnSubmit.parentElement.nextElementSibling.classList.remove("hiddenSurvey");
+});

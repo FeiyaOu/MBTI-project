@@ -17,6 +17,10 @@ html {
 body {
   /* position: relative; */
   background-color: var(--color-background);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  /* color: #444; */
+  line-height: 1.9;
 }
 header {
   position: fixed;
@@ -57,9 +61,9 @@ nav a {
 .section {
   width: 100%;
   height: 100vh;
-  padding-top: 10%;
 }
 .section1 {
+  padding-top: 10%;
   background-color: skyblue;
   display: flex;
   flex-direction: column;
@@ -68,7 +72,7 @@ nav a {
 }
 
 .section2 {
-  padding-top: 18%;
+  padding-top: 10%;
   background-color: lightsalmon;
 }
 .section3 {
@@ -80,8 +84,12 @@ nav a {
   align-items: center;
 }
 .section4 {
-  padding-top: 18%;
+  padding-top: 5%;
   background-color: purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .section5 {
   padding-top: 18%;
@@ -136,6 +144,116 @@ h2 {
   background-color: white;
   color: lightskyblue;
 }
+
+.btn-survey {
+  width: 20rem;
+  height: 5rem;
+  font-size: 2rem;
+  background-color: purple;
+  color: white;
+  margin-top: 3rem;
+  border: 0.1rem solid white;
+
+  cursor: pointer;
+  transition: all 0.5s;
+  transition-timing-function: cubic-bezier(0.1, 0.5, 1, 0.5, 0.1);
+}
+
+.surveyInvite {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-survey:hover {
+  scale: 1.2;
+}
+
+.survey-questions {
+  border: 1rem solid black;
+  position: relative;
+  width: 80%;
+  height: 40rem;
+  display: flex;
+  overflow: hidden;
+}
+
+.survey-question {
+  position: absolute;
+  /* border: 1rem solid green; */
+  top: 0;
+  width: 100%;
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.survey-form-1 {
+  margin-top: 3rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.custom-radio {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: scale(1.5);
+  margin-right: 1rem;
+}
+
+.survey-btn {
+  position: absolute;
+  top: 80%;
+
+  z-index: 10;
+  transform: translateY(-50%);
+
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  color: #333;
+  border-radius: 50%;
+  height: 5.5rem;
+  width: 5.5rem;
+  font-size: 3.25rem;
+  cursor: pointer;
+}
+
+.survey-btn-left {
+  left: 3%;
+}
+
+.survey-btn-right {
+  right: 3%;
+}
+
+.survey-submit {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
+
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  color: #333;
+
+  height: 5.5rem;
+  width: 10rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.survey-submition {
+  z-index: 20;
+}
+
 .color {
   width: 20rem;
   height: 20rem;
@@ -316,6 +434,10 @@ iframe {
   font-size: 3rem;
   text-align: center;
   line-height: 1.5;
+}
+
+.hiddenSurvey {
+  display: none;
 }
 
 @media screen and (max-width: 800px) {
