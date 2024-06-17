@@ -8,7 +8,6 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <section></section>
     <header>
       <div class="img-logo">
         <img src="logo1.png" alt="Logo" class="logo" />
@@ -18,17 +17,22 @@
         <a href="#about">About</a>
         <a href="#videos">Videos</a>
         <a href="#survey">Survey</a>
-        <a href="#books">Books</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
     <section class="section section1" id="home">
-      <h1>MBTI Game</h1>
-      <h2>
-        Discover Your True Self! <br />
-        Play the MBTI Personality Game Today <br />
-        and Unlock Your Potential!
-      </h2>
-      <button class="btn-play">Play</button>
+      <div class="section1-left">
+        <h1>MBTI Game</h1>
+        <h2>
+          Want to know more about MBTI personality test?<br />
+          Play with us, <br />
+          you may find your MBTI type.
+        </h2>
+        <button class="btn-play">Play</button>
+      </div>
+      <div class="section1-right">
+        <img src="backgroundImage1.jpg" alt="section1-img" />
+      </div>
     </section>
     <section class="sectionAdd hidden" id="play">
       <h1 class="letsPlay">Let's play!</h1>
@@ -171,6 +175,67 @@
     </section>
     <section class="section section2" id="about">
       <h1>What is MBTI</h1>
+      <div class="info-sessions">
+        <div class="info-box info-session1" data-count="1">
+          <h2>Overview and History</h2>
+        </div>
+        <div class="info-box info-session2" data-count="2">
+          <h2>Structure and Function</h2>
+        </div>
+
+        <div class="info-box info-session3" data-count="3">
+          <h2>Applications and Criticisms</h2>
+        </div>
+      </div>
+      <div class="info-modal info-modal1 hiddenInfoModal">
+        <button class="close-infoModal" data-count="1">&times;</button>
+        <h1>Overview and History</h1>
+        <p>
+          The Myers-Briggs Type Indicator (MBTI) is a widely used personality
+          assessment tool developed by Katharine Cook Briggs and her daughter
+          Isabel Briggs Myers. Based on Carl Jung's theory of psychological
+          types, the MBTI categorizes individuals into 16 distinct personality
+          types based on preferences in four key areas: Introversion vs.
+          Extraversion (I/E), Sensing vs. Intuition (S/N), Thinking vs. Feeling
+          (T/F), and Judging vs. Perceiving (J/P). Originally created to help
+          women entering the workforce during World War II understand their
+          strengths, the MBTI has since become a popular tool for personal
+          development, team building, and career counseling.
+        </p>
+      </div>
+      <div class="info-modal info-modal2 hiddenInfoModal">
+        <button class="close-infoModal" data-count="2">&times;</button>
+        <h1>Structure and Function</h1>
+        <p>
+          The MBTI assesses individuals through a series of questions designed
+          to determine their preferences in the four dichotomies (I/E, S/N, T/F,
+          J/P). These preferences combine to form one of the 16 personality
+          types, each represented by a four-letter code (e.g., INFJ, ESTP). Each
+          type offers insights into how a person perceives the world, processes
+          information, makes decisions, and interacts with others. The MBTI
+          helps individuals understand their inherent strengths and weaknesses,
+          communication styles, and preferred work environments, fostering
+          better self-awareness and interpersonal understanding.
+        </p>
+      </div>
+      <div class="info-modal info-modal3 hiddenInfoModal">
+        <button class="close-infoModal" data-count="3">&times;</button>
+        <h1>Applications and Criticisms</h1>
+        <p>
+          The MBTI is used in various settings, including personal development,
+          organizational development, and educational environments. In
+          workplaces, it aids in team building, leadership development, and
+          conflict resolution by helping team members appreciate diverse working
+          styles. In education, it supports students in understanding their
+          learning preferences and career paths. However, the MBTI also faces
+          criticism for its reliability and validity, with some psychologists
+          arguing that personality traits are too complex to be accurately
+          captured by a typology. Critics also point out that people's
+          preferences can change over time, challenging the test's ability to
+          provide consistent and actionable insights. Despite these critiques,
+          the MBTI remains a popular tool for personal and professional growth.
+        </p>
+      </div>
     </section>
     <section class="section section3" id="videos">
       <h2>Controversy around MBTI</h2>
@@ -190,28 +255,83 @@
       </div>
       <div class="survey-questions hiddenSurvey">
         <div class="survey-question survey-question-1">
-          <h2>What is your gender?</h2>
+          <h2>
+            How familiar are you with the Myers-Briggs Type Indicator (MBTI)
+            personality test?
+          </h2>
           <form class="survey-form-1">
             <input
               type="radio"
-              id="gender-female"
-              name="gender"
-              value="female"
+              id="question1-level1"
+              name="question1"
+              value="level1"
               class="custom-radio"
             />
-            <label for="gender-female">Female</label><br />
+            <label for="question1-level1">Very familiar </label><br />
             <input
               type="radio"
-              id="gender-male"
-              name="gender"
-              value="male"
+              id="question1-level2"
+              name="question1"
+              value="level2"
               class="custom-radio"
             />
-            <label for="gender-male">Male</label><br />
+            <label for="question1-level2">Somewhat familiar </label><br />
+            <input
+              type="radio"
+              id="question1-level3"
+              name="question1"
+              value="level3"
+              class="custom-radio"
+            />
+            <label for="question1-level3">Heard of it but not familiar </label
+            ><br />
+            <input
+              type="radio"
+              id="question1-level4"
+              name="question1"
+              value="level4"
+              class="custom-radio"
+            />
+            <label for="question1-level4">Never heard of it </label><br />
           </form>
         </div>
         <div class="survey-question survey-question-2">
           <h1>Q2</h1>
+          <form class="survey-form-1">
+            <input
+              type="radio"
+              id="question1-level1"
+              name="question1"
+              value="level1"
+              class="custom-radio"
+            />
+            <label for="question1-level1">Very familiar </label><br />
+            <input
+              type="radio"
+              id="question1-level2"
+              name="question1"
+              value="level2"
+              class="custom-radio"
+            />
+            <label for="question1-level2">Somewhat familiar </label><br />
+            <input
+              type="radio"
+              id="question1-level3"
+              name="question1"
+              value="level3"
+              class="custom-radio"
+            />
+            <label for="question1-level3">Heard of it but not familiar </label
+            ><br />
+            <input
+              type="radio"
+              id="question1-level4"
+              name="question1"
+              value="level4"
+              class="custom-radio"
+            />
+            <label for="question1-level4">Never heard of it </label><br />
+          </form>
         </div>
         <div class="survey-question survey-question-3">
           <h1>Q3</h1>
@@ -231,7 +351,10 @@
       </div>
     </section>
     <section class="section section5" id="books">
-      <h1>Book shelf</h1>
+      <h1>Contact us</h1>
     </section>
+    <footer class="footer">
+      <p>&copy;2024 FeiyaDesign.All rights reserved.</p>
+    </footer>
   </body>
 </html>

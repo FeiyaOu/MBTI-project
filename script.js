@@ -298,3 +298,30 @@ btnSubmit.addEventListener("click", function () {
   btnSubmit.parentElement.classList.add("hiddenSurvey");
   btnSubmit.parentElement.nextElementSibling.classList.remove("hiddenSurvey");
 });
+
+//section 2 modal
+
+const boxOpenModal = document.querySelectorAll(".info-box");
+const closeBoxModal = document.querySelectorAll(".close-infoModal");
+const infoModalBox = document.querySelectorAll(".info-modal");
+const openModal = function (infoModal) {
+  infoModal.classList.remove("hiddenInfoModal");
+  // overlay.classList.remove('hidden');
+};
+
+const closeModal = function (infoModal) {
+  infoModal.classList.add("hiddenInfoModal");
+  // overlay.classList.remove('hidden');
+};
+
+boxOpenModal.forEach((box) => {
+  box.addEventListener("click", function () {
+    openModal(infoModalBox[box.dataset.count - 1]);
+  });
+});
+
+closeBoxModal.forEach((box) => {
+  box.addEventListener("click", function () {
+    closeModal(infoModalBox[box.dataset.count - 1]);
+  });
+});

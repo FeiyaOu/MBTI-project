@@ -26,13 +26,15 @@ header {
   position: fixed;
 
   width: 100%; /* this is very important!*/
-  height: 10rem;
+  height: 5rem;
   display: flex;
   flex-direction: row;
 
-  font-size: 2rem;
+  font-size: 1.5rem;
   justify-content: space-between;
-  /* z-index: 100; */
+  background-color: white;
+
+  z-index: 100;
 }
 
 .img-logo {
@@ -40,11 +42,11 @@ header {
   /* background-image: url(./logo.png);
   background-size: contain;
   */
-  height: 10rem;
+  height: 5rem;
   width: auto;
 }
 img {
-  height: 10rem;
+  height: 5rem;
 }
 nav {
   /* background-color: green; */
@@ -53,9 +55,10 @@ nav {
 }
 
 nav a {
-  color: white;
-  padding: 3rem;
+  color: black;
+  padding: 1rem;
   text-decoration: none;
+  padding-right: 3rem;
 }
 
 .section {
@@ -64,16 +67,40 @@ nav a {
 }
 .section1 {
   padding-top: 10%;
-  background-color: skyblue;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
+.section1-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.section1-left h1 {
+  font-size: 5rem;
+}
+
+.section1-left h1,
+.section1-left h2 {
+  color: black;
+}
+.section1-right {
+  display: flex;
+  align-items: center;
+  /* border: 0.5rem solid black; */
+}
+
+.section1-right img {
+  width: 30rem;
+  height: auto;
+}
 
 .section2 {
+  position: relative;
   padding-top: 10%;
-  background-color: lightsalmon;
+  background-color: white;
 }
 .section3 {
   padding-top: 3%;
@@ -111,8 +138,8 @@ nav a {
 }
 
 h1 {
-  color: white;
-  font-size: 5rem;
+  color: black;
+  font-size: 3rem;
   text-align: center;
   /* padding-top: 12%; */
   /*not using margin-top, 
@@ -121,13 +148,18 @@ h1 {
 }
 
 h2 {
-  color: white;
-  font-size: 3rem;
+  color: black;
+  font-size: 2rem;
   text-align: center;
   padding-top: 5%;
   line-height: 1.5;
 }
 
+p {
+  font-size: 1.8rem;
+}
+
+/* section1 */
 .btn-play {
   width: 10rem;
   height: 10rem;
@@ -141,10 +173,56 @@ h2 {
   cursor: pointer;
 }
 .btn-play:hover {
+  border-color: lightskyblue;
   background-color: white;
   color: lightskyblue;
 }
 
+/* section2 */
+.info-sessions {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.info-box {
+  /* background-color: lightseagreen; */
+  border: 0.2rem solid white;
+  height: 30rem;
+  width: 20rem;
+}
+.info-box:hover {
+  cursor: pointer;
+}
+
+.info-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: pink;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.close-infoModal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.hiddenInfoModal {
+  display: none;
+}
+/* section 4 */
 .btn-survey {
   width: 20rem;
   height: 5rem;
@@ -184,7 +262,7 @@ h2 {
   /* border: 1rem solid green; */
   top: 0;
   width: 100%;
-  height: 18rem;
+  /* height: 18rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -424,6 +502,7 @@ ul {
   display: none;
 }
 
+/* section3 */
 iframe {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -438,6 +517,14 @@ iframe {
 
 .hiddenSurvey {
   display: none;
+}
+.footer {
+  /* height: 5rem; */
+  background-color: purple;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 5rem;
 }
 
 @media screen and (max-width: 800px) {
