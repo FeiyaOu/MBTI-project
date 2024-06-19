@@ -10,7 +10,7 @@
   <body>
     <header>
       <div class="img-logo">
-        <img src="logo1.png" alt="Logo" class="logo" />
+        <img src="logoNew.png" alt="Logo" class="logo" />
       </div>
       <nav>
         <a href="#home">Home</a>
@@ -24,9 +24,9 @@
       <div class="section1-left">
         <h1>MBTI Game</h1>
         <h2>
-          Want to know more about MBTI personality test?<br />
-          Play with us, <br />
-          you may find your MBTI type.
+          Why MBTI personality test is so popular?<br />
+          Play the game, find your type <br />
+          and explor more about the topic.
         </h2>
         <button class="btn-play">Play</button>
       </div>
@@ -35,8 +35,8 @@
       </div>
     </section>
     <section class="sectionAdd hidden" id="play">
-      <h1 class="letsPlay">Let's play!</h1>
-      <h2 class="pickColor">Pick the colors you prefer.</h2>
+      <!-- <h1 class="letsPlay">Let's play!</h1> -->
+      <h2 class="pickColor">Pick the colors you prefer</h2>
       <ul class="colorBox">
         <li class="color-btn-containter" data-count="1">
           <div class="color-container color-EI" data-count="1">
@@ -106,7 +106,7 @@
         <div class="chosenColor chosenJP" data-count="4"></div>
       </div>
       <div class="result hiddenTable">
-        <h1>Result Analysis</h1>
+        <h1>Game Result</h1>
         <table class="resultTable">
           <tr>
             <th
@@ -145,7 +145,7 @@
             <td class="table-color" data-count="4">color</td>
           </tr>
           <tr class="table-content">
-            <td>
+            <td style="vertical-align: text-top">
               <ul>
                 <li>
                   <p class="table-content" data-count="1">
@@ -154,42 +154,49 @@
                 </li>
               </ul>
             </td>
-            <td>
+            <td style="vertical-align: text-top">
               <ul>
                 <li><p class="table-content" data-count="2"></p></li>
               </ul>
             </td>
-            <td>
+            <td style="vertical-align: text-top">
               <ul>
                 <li><p class="table-content" data-count="3"></p></li>
               </ul>
             </td>
-            <td>
+            <td style="vertical-align: text-top">
               <ul>
                 <li><p class="table-content" data-count="4"></p></li>
               </ul>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" style="font-style: italic">
+              Note:This game is designed for entertainment purposes and is not
+              an accurate or reliable reference for determining MBTI personality
+              types.
             </td>
           </tr>
         </table>
       </div>
     </section>
     <section class="section section2" id="about">
-      <h1>What is MBTI</h1>
+      <div class="title2"><h2>What is MBTI</h2></div>
       <div class="info-sessions">
         <div class="info-box info-session1" data-count="1">
-          <h2>Overview and History</h2>
+          <div class="subtitle"><h3>Overview and History</h3></div>
         </div>
         <div class="info-box info-session2" data-count="2">
-          <h2>Structure and Function</h2>
+          <div class="subtitle"><h3>Structure and Function</h3></div>
         </div>
 
         <div class="info-box info-session3" data-count="3">
-          <h2>Applications and Criticisms</h2>
+          <div class="subtitle"><h3>Applications and Criticisms</h3></div>
         </div>
       </div>
       <div class="info-modal info-modal1 hiddenInfoModal">
         <button class="close-infoModal" data-count="1">&times;</button>
-        <h1>Overview and History</h1>
+        <h3>Overview and History</h3>
         <p>
           The Myers-Briggs Type Indicator (MBTI) is a widely used personality
           assessment tool developed by Katharine Cook Briggs and her daughter
@@ -205,7 +212,7 @@
       </div>
       <div class="info-modal info-modal2 hiddenInfoModal">
         <button class="close-infoModal" data-count="2">&times;</button>
-        <h1>Structure and Function</h1>
+        <h3>Structure and Function</h3>
         <p>
           The MBTI assesses individuals through a series of questions designed
           to determine their preferences in the four dichotomies (I/E, S/N, T/F,
@@ -220,7 +227,7 @@
       </div>
       <div class="info-modal info-modal3 hiddenInfoModal">
         <button class="close-infoModal" data-count="3">&times;</button>
-        <h1>Applications and Criticisms</h1>
+        <h3>Applications and Criticisms</h3>
         <p>
           The MBTI is used in various settings, including personal development,
           organizational development, and educational environments. In
@@ -238,12 +245,13 @@
       </div>
     </section>
     <section class="section section3" id="videos">
-      <h2>Controversy around MBTI</h2>
+      <div class="title3"><h2>Controversy around MBTI</h2></div>
 
       <iframe
         width="840"
         height="630"
         src="https://www.youtube.com/embed/-Z8J9edf_gw?playlist=-Z8J9edf_gw,Q5pggDCnt5M"
+        allowfullscreen
       >
       </iframe>
     </section>

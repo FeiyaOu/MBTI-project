@@ -6,7 +6,7 @@ const colorEI = document.querySelector(".color-EI");
 const colorContainer = document.querySelectorAll(".color-container");
 const colorBtnContainers = document.querySelectorAll(".color-btn-containter");
 const colorBox = document.querySelector(".colorBox");
-const letsPlay = document.querySelector(".letsPlay");
+// const letsPlay = document.querySelector(".letsPlay");
 const pickColor = document.querySelector(".pickColor");
 const chosenColors = document.querySelectorAll(".chosenColor");
 const chosenColorBox = document.querySelector(".chosenColors");
@@ -18,7 +18,7 @@ const tableTypes = document.querySelectorAll(".table-type");
 const tableColors = document.querySelectorAll(".table-color");
 const tableContent = document.querySelectorAll(".table-content");
 const resultTable = document.querySelector(".result");
-const GameMessage1 = document.querySelector(".letsPlay").textContent;
+// const GameMessage1 = document.querySelector(".letsPlay").textContent;
 const GameMessage2 = document.querySelector(".pickColor").textContent;
 const btnSurvey = document.querySelector(".btn-survey");
 
@@ -110,9 +110,9 @@ btnPlay.addEventListener("click", function (e) {
 
   // colorSN.classList.add("hidden");
   chosenColorBox.style.display = "";
-  changeInfo(letsPlay, GameMessage1);
+  // changeInfo(letsPlay, GameMessage1);
   changeInfo(pickColor, GameMessage2);
-  messageGame.remove();
+  // messageGame.remove();
   resultTable.classList.add("hiddenTable");
 
   chosenColors.forEach((cc) => (cc.style.backgroundColor = "black"));
@@ -124,16 +124,16 @@ btnPlay.addEventListener("click", function (e) {
 //   colorContainer.forEach((c) => (c.style.opacity = 0.3));
 // });
 
-const messageGame = document.createElement("div");
-const messageHTML = `You are probably a MBTI`;
-messageGame.textContent = messageHTML;
-messageGame.style.fontSize = "5rem";
-messageGame.style.textAlign = "center";
-messageGame.style.color = "white";
+// const messageGame = document.createElement("div");
+// const messageHTML = `You are probably a MBTI`;
+// messageGame.textContent = messageHTML;
+// messageGame.style.fontSize = "5rem";
+// messageGame.style.textAlign = "center";
+// messageGame.style.color = "black";
 // messageGame.style.marginTop = "5rem";
-messageGame.style.marginBottom = "6rem";
+// messageGame.style.marginBottom = "6rem";
 
-const gameResultMessage = `Game Result`;
+// const gameResultMessage = `Game Result`;
 
 colorContainer.forEach((c) =>
   c.addEventListener("click", function (e) {
@@ -195,9 +195,9 @@ const moveNext = function (nextBtn, parentContainer, styleAdd) {
   nextBtn.addEventListener("click", function (e) {
     nextBtn.closest(parentContainer).classList.add(styleAdd);
     if (!nextBtn.closest(parentContainer).nextElementSibling) {
-      changeInfo(letsPlay, gameResultMessage);
+      // changeInfo(letsPlay, gameResultMessage);
       changeInfo(pickColor);
-      showInfo(colorBox, messageGame);
+      // showInfo(colorBox, messageGame);
       // nextBtn.closest(".chosenColors").style.display = "none";
       chosenColorBox.style.display = "none";
       resultTable.classList.remove("hiddenTable");
