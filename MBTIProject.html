@@ -10,33 +10,35 @@
   <body>
     <header>
       <div class="img-logo">
-        <img src="logoNew.png" alt="Logo" class="logo" />
+        <a href="#home"
+          ><img src="logoTypeMBTI.svg" alt="Logo" class="logo"
+        /></a>
       </div>
-      <nav>
+      <nav class="navBar">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#videos">Videos</a>
         <a href="#survey">Survey</a>
-        <a href="#contact">Contact</a>
+        <!-- <a href="#contact">Contact</a> -->
       </nav>
     </header>
     <section class="section section1" id="home">
       <div class="section1-left">
         <h1>MBTI Game</h1>
         <h2>
-          Why MBTI personality test is so popular?<br />
-          Play the game, find your type <br />
-          and explor more about the topic.
+          Why MBTI personality test becomes so popular?<br />
+          What is your opinion on it?<br />
+          Play the game and explore more about the topic.
         </h2>
         <button class="btn-play">Play</button>
       </div>
       <div class="section1-right">
-        <img src="backgroundImage1.jpg" alt="section1-img" />
+        <img src="backgroundImage2.png" alt="section1-img" />
       </div>
     </section>
     <section class="sectionAdd hidden" id="play">
       <!-- <h1 class="letsPlay">Let's play!</h1> -->
-      <h2 class="pickColor">Pick the colors you prefer</h2>
+      <h2 class="pickColor">Pick the color you prefer</h2>
       <ul class="colorBox">
         <li class="color-btn-containter" data-count="1">
           <div class="color-container color-EI" data-count="1">
@@ -245,29 +247,32 @@
       </div>
     </section>
     <section class="section section3" id="videos">
-      <div class="title3"><h2>Controversy around MBTI</h2></div>
-
+      <div class="title3"><h2>MBTI research and criticisms</h2></div>
+      <p>Here are two Youtube videos critisizing MBTI. <br /></p>
       <iframe
         width="840"
         height="630"
-        src="https://www.youtube.com/embed/-Z8J9edf_gw?playlist=-Z8J9edf_gw,Q5pggDCnt5M"
+        src="https://www.youtube.com/embed/lN7Fmt1i5TI?playlist=lN7Fmt1i5TI,Q5pggDCnt5M"
         allowfullscreen
       >
       </iframe>
     </section>
     <section class="section section4" id="survey">
       <div class="surveyInvite">
-        <h1>Survey</h1>
-        <h2>What's your take on MTBI? <br />Tell us your opinion and story</h2>
+        <div class="title4"><h2>Survey</h2></div>
+        <!-- <h1>Survey</h1> -->
+        <h3>
+          What's your take on MTBI? <br />Tell us your opinion and experience.
+        </h3>
         <button class="btn-survey">Take the survey</button>
       </div>
       <div class="survey-questions hiddenSurvey">
         <div class="survey-question survey-question-1">
-          <h2>
+          <h3>
             How familiar are you with the Myers-Briggs Type Indicator (MBTI)
             personality test?
-          </h2>
-          <form class="survey-form-1">
+          </h3>
+          <form class="survey-form survey-form1">
             <input
               type="radio"
               id="question1-level1"
@@ -304,63 +309,243 @@
           </form>
         </div>
         <div class="survey-question survey-question-2">
-          <h1>Q2</h1>
-          <form class="survey-form-1">
+          <h3>
+            Do you believe that the MBTI accurately reflects your personality?
+          </h3>
+          <form class="survey-form survey-form2">
             <input
               type="radio"
-              id="question1-level1"
-              name="question1"
+              id="question2-level1"
+              name="question2"
               value="level1"
               class="custom-radio"
             />
-            <label for="question1-level1">Very familiar </label><br />
+            <label for="question2-level1">Strongly agree</label><br />
             <input
               type="radio"
-              id="question1-level2"
-              name="question1"
+              id="question2-level2"
+              name="question2"
               value="level2"
               class="custom-radio"
             />
-            <label for="question1-level2">Somewhat familiar </label><br />
+            <label for="question2-level2">Agree</label><br />
             <input
               type="radio"
-              id="question1-level3"
-              name="question1"
+              id="question2-level3"
+              name="question2"
               value="level3"
               class="custom-radio"
             />
-            <label for="question1-level3">Heard of it but not familiar </label
-            ><br />
+            <label for="question2-level3">Neutral</label><br />
             <input
               type="radio"
               id="question1-level4"
-              name="question1"
+              name="question2"
               value="level4"
               class="custom-radio"
             />
-            <label for="question1-level4">Never heard of it </label><br />
+            <label for="question2-level4">Disagree </label><br />
           </form>
         </div>
         <div class="survey-question survey-question-3">
-          <h1>Q3</h1>
+          <h3>
+            Have you used your MBTI results to make decisions in your personal
+            or professional life?
+          </h3>
+          <form class="survey-form survey-form3">
+            <input
+              type="radio"
+              id="question3-level1"
+              name="question3"
+              value="level1"
+              class="custom-radio"
+            />
+            <label for="question3-level1"> Yes, frequently </label><br />
+            <input
+              type="radio"
+              id="question3-level2"
+              name="question3"
+              value="level2"
+              class="custom-radio"
+            />
+            <label for="question3-level2">Yes, occasionally </label><br />
+            <input
+              type="radio"
+              id="question3-level3"
+              name="question3"
+              value="level3"
+              class="custom-radio"
+            />
+            <label for="question3-level3">Rarely</label><br />
+            <input
+              type="radio"
+              id="question3-level4"
+              name="question3"
+              value="level4"
+              class="custom-radio"
+            />
+            <label for="question3-level4">Never </label><br />
+          </form>
         </div>
         <div class="survey-question survey-question-4">
-          <h1>Q4</h1>
+          <h3>
+            Do you think knowing someone's MBTI type can improve your
+            relationship with them?
+          </h3>
+          <form class="survey-form survey-form4">
+            <input
+              type="radio"
+              id="question4-level1"
+              name="question4"
+              value="level1"
+              class="custom-radio"
+            />
+            <label for="question4-level1"> Yes, significantly </label><br />
+            <input
+              type="radio"
+              id="question4-level2"
+              name="question4"
+              value="level2"
+              class="custom-radio"
+            />
+            <label for="question4-level2">Yes, somewhat </label><br />
+            <input
+              type="radio"
+              id="question4-level3"
+              name="question4"
+              value="level3"
+              class="custom-radio"
+            />
+            <label for="question4-level3"> Not sure </label><br />
+            <input
+              type="radio"
+              id="question4-level4"
+              name="question4"
+              value="level4"
+              class="custom-radio"
+            />
+            <label for="question4-level">No, not really </label><br />
+            <input
+              type="radio"
+              id="question4-level5"
+              name="question4"
+              value="level5"
+              class="custom-radio"
+            />
+            <label for="question4-level5">No, not at all </label><br />
+          </form>
+        </div>
+        <div class="survey-question survey-question-5">
+          <h3>
+            Do you think the MBTI is a valuable tool for understanding yourself
+            and others?
+          </h3>
+          <form class="survey-form survey-form5">
+            <input
+              type="radio"
+              id="question5-level1"
+              name="question5"
+              value="level1"
+              class="custom-radio"
+            />
+            <label for="question5-level1"> Extremely valuable </label><br />
+            <input
+              type="radio"
+              id="question5-level2"
+              name="question5"
+              value="level2"
+              class="custom-radio"
+            />
+            <label for="question5-level2">Valuable </label><br />
+            <input
+              type="radio"
+              id="question5-level3"
+              name="question5"
+              value="level3"
+              class="custom-radio"
+            />
+            <label for="question5-level3">Neutral</label><br />
+            <input
+              type="radio"
+              id="question5-level4"
+              name="question5"
+              value="level4"
+              class="custom-radio"
+            />
+            <label for="question5-level">Not very valuable </label><br />
+            <input
+              type="radio"
+              id="question5-level5"
+              name="question5"
+              value="level5"
+              class="custom-radio"
+            />
+            <label for="question5-level5">Not valuable at all </label><br />
+          </form>
+        </div>
+        <div class="survey-question survey-question-6">
+          <h3>
+            Do you believe that MBTI results should be considered when making
+            career choices?
+          </h3>
+          <form class="survey-form survey-form6">
+            <input
+              type="radio"
+              id="question6-level1"
+              name="question6"
+              value="level1"
+              class="custom-radio"
+            />
+            <label for="question6-level1"> Yes, definitely </label><br />
+            <input
+              type="radio"
+              id="question6-level2"
+              name="question6"
+              value="level2"
+              class="custom-radio"
+            />
+            <label for="question6-level2">Yes, to some extent </label><br />
+            <input
+              type="radio"
+              id="question6-level3"
+              name="question6"
+              value="level3"
+              class="custom-radio"
+            />
+            <label for="question6-level3">Neutral </label><br />
+            <input
+              type="radio"
+              id="question6-level4"
+              name="question6"
+              value="level4"
+              class="custom-radio"
+            />
+            <label for="question6-level">No, not really </label><br />
+            <input
+              type="radio"
+              id="question6-level5"
+              name="question6"
+              value="level5"
+              class="custom-radio"
+            />
+            <label for="question6-level5">No, not at all </label><br />
+          </form>
         </div>
         <button class="survey-btn survey-btn-left">&larr;</button>
         <button class="survey-btn survey-btn-right">&rarr;</button>
         <button class="survey-submit hiddenSurvey">Submit</button>
       </div>
       <div class="survey-submition hiddenSurvey">
-        <h2>
+        <h3>
           You have successfully submitted the survey.<br />
           Thanks for your participation.
-        </h2>
+        </h3>
+        <button class="btn-back">Back to survey</button>
       </div>
     </section>
-    <section class="section section5" id="books">
+    <!-- <section class="section section5" id="books">
       <h1>Contact us</h1>
-    </section>
+    </section> -->
     <footer class="footer">
       <p>&copy;2024 FeiyaDesign.All rights reserved.</p>
     </footer>

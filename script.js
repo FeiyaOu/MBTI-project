@@ -1,6 +1,7 @@
 "use strict";
 const btnPlay = document.querySelector(".btn-play");
 const sectionPlay = document.querySelector("#play");
+const navBar = document.querySelector(".navBar");
 const colorSN = document.querySelector(".color-SN");
 const colorEI = document.querySelector(".color-EI");
 const colorContainer = document.querySelectorAll(".color-container");
@@ -20,7 +21,37 @@ const tableContent = document.querySelectorAll(".table-content");
 const resultTable = document.querySelector(".result");
 // const GameMessage1 = document.querySelector(".letsPlay").textContent;
 const GameMessage2 = document.querySelector(".pickColor").textContent;
+const infoBox = document.querySelectorAll(".info-box");
 const btnSurvey = document.querySelector(".btn-survey");
+
+navBar.addEventListener("mouseover", function (e) {
+  e.target.style.fontWeight = "bold";
+  e.target.style.transition = "all 0.5s ease";
+  e.target.style.backgroundColor = "white";
+  e.target.style.color = "black";
+});
+
+navBar.addEventListener("mouseout", function (e) {
+  e.target.style.fontWeight = "";
+  e.target.style.transition = "all 0.5s ease";
+  e.target.style.backgroundColor = "black";
+  e.target.style.color = "white";
+});
+
+infoBox.forEach((Box) => {
+  Box.addEventListener("mouseover", function () {
+    Box.children[0].style.backgroundColor = "rgb(168, 225, 180)";
+    Box.children[0].style.color = "black";
+    Box.children[0].style.color = "all 0.5s ease";
+  });
+});
+infoBox.forEach((Box) => {
+  Box.addEventListener("mouseout", function () {
+    Box.children[0].style.backgroundColor = "black";
+    Box.children[0].style.color = "white";
+    Box.children[0].style.color = "all 0.5s ease";
+  });
+});
 
 const tableContentDetails = [
   [
@@ -93,7 +124,8 @@ people and activities.`,
 
 btnPlay.addEventListener("click", function (e) {
   e.preventDefault();
-
+  btnPlay.textContent = "Play Again";
+  btnPlay.style.fontSize = "2rem";
   sectionPlay.classList.remove("hidden");
   colorBtnContainers.forEach((cbc) => {
     if (cbc.dataset.count !== "1") {
@@ -251,6 +283,9 @@ const hideInfo = function (box, message) {
 btnSurvey.addEventListener("click", function () {
   btnSurvey.closest(".surveyInvite").classList.add("hiddenSurvey");
   btnSurvey.parentElement.nextElementSibling.classList.remove("hiddenSurvey");
+  for (let i = 1; i < 7; i++) {
+    clearRadioSelection(`question${i}`);
+  }
 });
 
 //slide effect
@@ -285,7 +320,10 @@ const nextSlide = function () {
 const previousSlide = function () {
   if (currclick === 0) {
     currclick = 0;
+    btnSurvey.closest(".surveyInvite").classList.remove("hiddenSurvey");
+    btnSurvey.parentElement.nextElementSibling.classList.add("hiddenSurvey");
   } else {
+    btnSubmit.classList.add("hiddenSurvey");
     currclick--;
   }
   slidesMove(currclick);
@@ -298,6 +336,21 @@ btnSubmit.addEventListener("click", function () {
   btnSubmit.parentElement.classList.add("hiddenSurvey");
   btnSubmit.parentElement.nextElementSibling.classList.remove("hiddenSurvey");
 });
+
+const btnBack = document.querySelector(".btn-back");
+btnBack.addEventListener("click", function () {
+  currclick = 0;
+  btnSubmit.classList.add("hiddenSurvey");
+  btnSurvey.closest(".surveyInvite").classList.remove("hiddenSurvey");
+  btnSubmit.parentElement.nextElementSibling.classList.add("hiddenSurvey");
+});
+
+function clearRadioSelection(name) {
+  const radios = document.getElementsByName(name);
+  for (let i = 0; i < radios.length; i++) {
+    radios[i].checked = false;
+  }
+}
 
 //section 2 modal
 

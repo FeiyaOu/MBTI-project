@@ -1,6 +1,8 @@
 :root {
   --color-background: white;
   --color-theme: rgb(168, 225, 180);
+  /* --color-theme: rgb(130, 232, 191); */
+  /* --color-theme: rgb(47, 216, 149); */
 }
 
 * {
@@ -47,12 +49,12 @@ header {
   /* background-image: url(./logo.png);
   background-size: contain;
   */
-  height: 5rem;
+  height: 4rem;
   width: auto;
   margin-left: 3rem;
 }
 img {
-  height: 5rem;
+  height: 4rem;
 }
 nav {
   /* background-color: green; */
@@ -62,9 +64,10 @@ nav {
 
 nav a {
   color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   text-decoration: none;
   padding-right: 3rem;
+  height: 6rem;
 }
 
 .section {
@@ -85,12 +88,14 @@ nav a {
   align-items: center;
 }
 .section1-left h1 {
+  color: black;
   font-size: 5rem;
 }
 
-.section1-left h1,
 .section1-left h2 {
   color: black;
+  font-size: 2rem;
+  text-align: center;
 }
 .section1-right {
   display: flex;
@@ -137,11 +142,6 @@ nav a {
   align-items: center;
 }
 
-.section2 h2 {
-  font-size: 3rem;
-  padding: 0 3rem;
-}
-
 .title2 {
   position: relative;
   display: flex;
@@ -151,6 +151,8 @@ nav a {
 }
 
 .section2 h2 {
+  font-size: 3rem;
+  padding: 0 3rem;
   display: block;
   position: relative;
 }
@@ -184,6 +186,16 @@ nav a {
   width: 100%;
   font-size: 1.5rem;
 }
+
+.info-modal h3 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.info-modal p {
+  font-size: 1.5rem;
+}
+
 /* section 3 */
 .section3 {
   position: relative;
@@ -193,11 +205,6 @@ nav a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.section3 h2 {
-  font-size: 3rem;
-  padding: 0 3rem;
 }
 
 .title3 {
@@ -211,6 +218,8 @@ nav a {
 .section3 h2 {
   display: block;
   position: relative;
+  font-size: 3rem;
+  padding: 0 3rem;
 }
 .section3 h2::before {
   display: block;
@@ -235,20 +244,63 @@ nav a {
   top: 40%;
   right: -60%;
 }
+/* section 4 */
+.title4 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  background-color: white;
+}
 
 .section4 {
-  padding-top: 5%;
-  background-color: white;
+  position: relative;
+  /* padding-top: 10rem; */
+  /* background-color: pink; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.section5 {
-  padding-top: 18%;
-  background-color: lightpink;
+
+.section4 h2 {
+  display: block;
+  position: relative;
+  font-size: 3rem;
+  padding: 0 3rem;
+}
+.section4 h2::before {
+  display: block;
+  content: "";
+  height: 30%;
+  width: 120%;
+  /* background-color: #edc84b; */
+  background-color: var(--color-theme);
+  position: absolute;
+  top: 40%;
+  left: -120%;
 }
 
+.section4 h2::after {
+  display: block;
+  content: "";
+  height: 30%;
+  width: 120%;
+  /* background-color: #edc84b; */
+  background-color: var(--color-theme);
+  position: absolute;
+  top: 40%;
+  right: -120%;
+}
+/* .section5 {
+  padding-top: 18%;
+  background-color: lightpink;
+} */
+.section4 h3 {
+  font-size: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+}
 .sectionAdd {
   width: 100%;
   padding-top: 15%;
@@ -303,6 +355,7 @@ nav a {
   align-items: flex-end;
   justify-content: center;
 }
+
 .info-box:hover {
   cursor: pointer;
 }
@@ -334,7 +387,7 @@ nav a {
   border-radius: 5px;
   border: 0.5rem solid var(--color-theme);
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-  z-index: 10;
+  z-index: 20;
 }
 
 .close-infoModal {
@@ -355,10 +408,11 @@ nav a {
   width: 20rem;
   height: 5rem;
   font-size: 2rem;
-  background-color: purple;
-  color: white;
+  background-color: var(--color-theme);
+  color: black;
   margin-top: 3rem;
-  border: 0.1rem solid white;
+  border: none;
+  /* border: 0.1rem solid white; */
 
   cursor: pointer;
   transition: all 0.5s;
@@ -373,7 +427,7 @@ nav a {
 }
 
 .btn-survey:hover {
-  scale: 1.2;
+  scale: 1.1;
 }
 
 .survey-questions {
@@ -398,7 +452,7 @@ nav a {
   justify-content: center;
 }
 
-.survey-form-1 {
+.survey-form {
   margin-top: 3rem;
   font-size: 2rem;
   color: black;
@@ -415,13 +469,13 @@ nav a {
 
 .survey-btn {
   position: absolute;
-  top: 80%;
+  top: 50%;
 
   z-index: 10;
   transform: translateY(-50%);
 
   border: none;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--color-theme);
   font-family: inherit;
   color: #333;
   border-radius: 50%;
@@ -432,22 +486,22 @@ nav a {
 }
 
 .survey-btn-left {
-  left: 3%;
+  left: 20%;
 }
 
 .survey-btn-right {
-  right: 3%;
+  right: 20%;
 }
 
 .survey-submit {
   position: absolute;
   top: 80%;
-  left: 50%;
+  left: 80%;
   z-index: 10;
   transform: translateX(-50%);
 
   border: none;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--color-theme);
   font-family: inherit;
   color: #333;
 
@@ -458,7 +512,27 @@ nav a {
 }
 
 .survey-submition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   z-index: 20;
+}
+.btn-back {
+  margin-top: 3rem;
+  height: 5.5rem;
+  width: 20rem;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: var(--color-theme);
+  color: black;
+  cursor: pointer;
+  transition: all 0.5s;
+  transition-timing-function: cubic-bezier(0.1, 0.5, 1, 0.5, 0.1);
+  border: none;
+}
+.btn-back:hover {
+  scale: 1.1;
 }
 
 .color {
@@ -524,11 +598,11 @@ nav a {
   margin-left: 4rem;
 }
 .color-judger {
-  background-color: rgb(247, 123, 96);
+  background-color: rgb(251, 194, 62);
   /* margin-left: 4rem; */
 }
 .color-perceiver {
-  background-color: rgb(169, 195, 109);
+  background-color: rgb(22, 168, 220);
   margin-left: 4rem;
 }
 
@@ -674,6 +748,9 @@ ul {
 }
 
 /* section3 */
+.section3 p {
+  font-size: 2rem;
+}
 iframe {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -685,9 +762,9 @@ iframe {
 }
 .footer {
   /* height: 5rem; */
-  background-color: purple;
+  background-color: black;
   color: white;
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-align: center;
   padding: 5rem;
 }
