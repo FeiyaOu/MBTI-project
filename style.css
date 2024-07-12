@@ -64,9 +64,9 @@ nav {
 
 nav a {
   color: white;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   text-decoration: none;
-  padding-right: 3rem;
+
   height: 6rem;
 }
 
@@ -687,7 +687,7 @@ nav a {
   content: "";
   height: 30%;
   width: 100%;
-  /* background-color: #edc84b; */
+
   background-color: var(--color-theme);
   position: absolute;
   top: 30%;
@@ -699,7 +699,7 @@ nav a {
   content: "";
   height: 30%;
   width: 100%;
-  /* background-color: #edc84b; */
+
   background-color: var(--color-theme);
   position: absolute;
   top: 30%;
@@ -743,6 +743,11 @@ ul {
   color: white;
 }
 
+.download {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
 .hiddenTable {
   display: none;
 }

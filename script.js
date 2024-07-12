@@ -25,14 +25,14 @@ const infoBox = document.querySelectorAll(".info-box");
 const btnSurvey = document.querySelector(".btn-survey");
 
 navBar.addEventListener("mouseover", function (e) {
-  e.target.style.fontWeight = "bold";
+  // e.target.style.fontWeight = "bold";
   e.target.style.transition = "all 0.5s ease";
   e.target.style.backgroundColor = "white";
   e.target.style.color = "black";
 });
 
 navBar.addEventListener("mouseout", function (e) {
-  e.target.style.fontWeight = "";
+  // e.target.style.fontWeight = "";
   e.target.style.transition = "all 0.5s ease";
   e.target.style.backgroundColor = "black";
   e.target.style.color = "white";
@@ -167,6 +167,37 @@ btnPlay.addEventListener("click", function (e) {
 
 // const gameResultMessage = `Game Result`;
 
+//create pdf with resultTable, create download function;
+
+async function downloadPDF() {
+  resultTable.querySelector(".table-colors").style.color = "black";
+  const { jsPDF } = window.jspdf;
+
+  // Use html2canvas to capture the form as an image
+  const canvas = await html2canvas(resultTable, { scale: 2 });
+  const imgData = canvas.toDataURL("image/png");
+
+  const pdf = new jsPDF();
+  const imgProps = pdf.getImageProperties(imgData);
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+  pdf.addImage(imgData, "PNG", 0, 50, pdfWidth, pdfHeight);
+  pdf.save("Game Result.pdf");
+}
+
+//pdf download event
+const throttledDownloadPDF = _.throttle(downloadPDF, 5000, {
+  leading: true,
+  trailing: false,
+});
+
+const btnDownload = document.querySelector(".download");
+btnDownload.addEventListener("click", function () {
+  throttledDownloadPDF();
+});
+/////////////////////
+
 colorContainer.forEach((c) =>
   c.addEventListener("click", function (e) {
     // this.style.display = "none";
@@ -233,6 +264,7 @@ const moveNext = function (nextBtn, parentContainer, styleAdd) {
       // nextBtn.closest(".chosenColors").style.display = "none";
       chosenColorBox.style.display = "none";
       resultTable.classList.remove("hiddenTable");
+      btnDownload.classList.remove("hiddenTable");
     }
     nextBtn
       .closest(parentContainer)
