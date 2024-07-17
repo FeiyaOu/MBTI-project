@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>MBTI application</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style-desktop.css" /> -->
+    <link
+      rel="stylesheet"
+      href="style-desktop.css"
+      media="screen and (min-width: 821px)"
+    />
+    <link
+      rel="stylesheet"
+      href="style-mobile.css"
+      media="screen and (max-width: 820px)"
+    />
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"
@@ -17,7 +27,8 @@
       defer
       src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"
     ></script>
-    <script defer src="script.js"></script>
+
+    <script defer src="script-desktop.js"></script>
   </head>
   <body>
     <header>
@@ -31,7 +42,6 @@
         <a href="#about">About</a>
         <a href="#videos">Videos</a>
         <a href="#survey">Survey</a>
-        <!-- <a href="#contact">Contact</a> -->
       </nav>
     </header>
     <section class="section section1" id="home">
@@ -49,7 +59,6 @@
       </div>
     </section>
     <section class="sectionAdd hidden" id="play">
-      <!-- <h1 class="letsPlay">Let's play!</h1> -->
       <h2 class="pickColor">Pick the color you prefer</h2>
       <ul class="colorBox">
         <li class="color-btn-containter" data-count="1">
@@ -192,6 +201,77 @@
             </td>
           </tr>
         </table>
+        <table class="resultTableMobile">
+          <tr>
+            <th
+              style="width: 25%"
+              class="table-type tableInfo-typeEI"
+              data-count="1"
+            >
+              M
+            </th>
+            <th
+              style="width: 25%"
+              class="table-type tableInfo-typeSN"
+              data-count="2"
+            >
+              B
+            </th>
+            <th
+              style="width: 25%"
+              class="table-type tableInfo-typeTF"
+              data-count="3"
+            >
+              T
+            </th>
+            <th
+              style="width: 25%"
+              class="table-type tableInfo-typeJP"
+              data-count="4"
+            >
+              I
+            </th>
+          </tr>
+          <tr class="table-colors">
+            <td class="table-color" data-count="1">color</td>
+            <td class="table-color" data-count="2">color</td>
+            <td class="table-color" data-count="3">color</td>
+            <td class="table-color" data-count="4">color</td>
+          </tr>
+          <tr class="table-content">
+            <td style="vertical-align: text-top">
+              <ul>
+                <li>
+                  <p class="table-content" data-count="1">
+                    this is a long story to tell I do not know where to start
+                  </p>
+                </li>
+              </ul>
+            </td>
+            <td style="vertical-align: text-top">
+              <ul>
+                <li><p class="table-content" data-count="2"></p></li>
+              </ul>
+            </td>
+            <td style="vertical-align: text-top">
+              <ul>
+                <li><p class="table-content" data-count="3"></p></li>
+              </ul>
+            </td>
+            <td style="vertical-align: text-top">
+              <ul>
+                <li><p class="table-content" data-count="4"></p></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" style="font-style: italic">
+              Note:This game is designed for entertainment purposes and is not
+              an accurate or reliable reference for determining MBTI personality
+              types.
+            </td>
+          </tr>
+        </table>
       </div>
       <button class="download hiddenTable">Download Result PDF</button>
     </section>
@@ -261,11 +341,11 @@
     </section>
     <section class="section section3" id="videos">
       <div class="title3"><h2>MBTI research and criticisms</h2></div>
-      <p>Here are two Youtube videos critisizing MBTI. <br /></p>
+      <p>Here are four Youtube videos discussing MBTI. <br /></p>
       <iframe
         width="840"
         height="630"
-        src="https://www.youtube.com/embed/lN7Fmt1i5TI?playlist=lN7Fmt1i5TI,Q5pggDCnt5M"
+        src="https://www.youtube.com/embed/lN7Fmt1i5TI?playlist=lN7Fmt1i5TI,NXcWZnQPUXw,RoQi9Mvqip0,Q5pggDCnt5M"
         allowfullscreen
       >
       </iframe>
@@ -273,7 +353,6 @@
     <section class="section section4" id="survey">
       <div class="surveyInvite">
         <div class="title4"><h2>Survey</h2></div>
-        <!-- <h1>Survey</h1> -->
         <h3>
           What's your take on MTBI? <br />Tell us your opinion and experience.
         </h3>
@@ -556,9 +635,7 @@
         <button class="btn-back">Back to survey</button>
       </div>
     </section>
-    <!-- <section class="section section5" id="books">
-      <h1>Contact us</h1>
-    </section> -->
+
     <footer class="footer">
       <p>&copy;2024 FeiyaDesign.All rights reserved.</p>
     </footer>

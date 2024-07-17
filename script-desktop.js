@@ -2,12 +2,12 @@
 const btnPlay = document.querySelector(".btn-play");
 const sectionPlay = document.querySelector("#play");
 const navBar = document.querySelector(".navBar");
+const navBarMobile = document.querySelector(".navBarMobile");
 const colorSN = document.querySelector(".color-SN");
 const colorEI = document.querySelector(".color-EI");
 const colorContainer = document.querySelectorAll(".color-container");
 const colorBtnContainers = document.querySelectorAll(".color-btn-containter");
 const colorBox = document.querySelector(".colorBox");
-// const letsPlay = document.querySelector(".letsPlay");
 const pickColor = document.querySelector(".pickColor");
 const chosenColors = document.querySelectorAll(".chosenColor");
 const chosenColorBox = document.querySelector(".chosenColors");
@@ -19,40 +19,40 @@ const tableTypes = document.querySelectorAll(".table-type");
 const tableColors = document.querySelectorAll(".table-color");
 const tableContent = document.querySelectorAll(".table-content");
 const resultTable = document.querySelector(".result");
-// const GameMessage1 = document.querySelector(".letsPlay").textContent;
 const GameMessage2 = document.querySelector(".pickColor").textContent;
 const infoBox = document.querySelectorAll(".info-box");
 const btnSurvey = document.querySelector(".btn-survey");
 
+//navigation bar mouse event
 navBar.addEventListener("mouseover", function (e) {
-  // e.target.style.fontWeight = "bold";
   e.target.style.transition = "all 0.5s ease";
   e.target.style.backgroundColor = "white";
   e.target.style.color = "black";
 });
 
 navBar.addEventListener("mouseout", function (e) {
-  // e.target.style.fontWeight = "";
   e.target.style.transition = "all 0.5s ease";
   e.target.style.backgroundColor = "black";
   e.target.style.color = "white";
 });
 
+//section2 titles mouse event
 infoBox.forEach((Box) => {
   Box.addEventListener("mouseover", function () {
     Box.children[0].style.backgroundColor = "rgb(168, 225, 180)";
     Box.children[0].style.color = "black";
-    Box.children[0].style.color = "all 0.5s ease";
+    Box.children[0].style.transition = "all 0.5s ease";
   });
 });
 infoBox.forEach((Box) => {
   Box.addEventListener("mouseout", function () {
     Box.children[0].style.backgroundColor = "black";
     Box.children[0].style.color = "white";
-    Box.children[0].style.color = "all 0.5s ease";
+    Box.children[0].style.transition = "all 0.5s ease";
   });
 });
 
+//game result table content
 const tableContentDetails = [
   [
     {
@@ -107,21 +107,7 @@ people and activities.`,
   ],
 ];
 
-// const nextBtn = document.querySelectorAll(".next");
-// btnPlay.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   const sectionAdd = document.createElement("div");
-//   const htmlPlay = `The Game begins...`;
-//   sectionAdd.insertAdjacentHTML("beforeend", htmlPlay);
-//   sectionAdd.classList.add("section");
-//   section2.before(sectionAdd);
-//   window.scrollTo({
-//     top: window.innerHeight,
-//     left: 0,
-//     behavior: "smooth",
-//   });
-// });
-
+//section1 play button
 btnPlay.addEventListener("click", function (e) {
   e.preventDefault();
   btnPlay.textContent = "Play Again";
@@ -133,6 +119,9 @@ btnPlay.addEventListener("click", function (e) {
     }
   });
 
+  btnDownload.classList.add("hiddenTable");
+
+  //sectionAdd play game;
   const a1 = Array.from(colorBtnContainers);
   const colorBtnContainerEI = a1.find(
     (div) => div.getAttribute("data-count") === "1"
@@ -140,32 +129,16 @@ btnPlay.addEventListener("click", function (e) {
 
   colorBtnContainerEI.classList.remove("hiddenColor");
 
-  // colorSN.classList.add("hidden");
   chosenColorBox.style.display = "";
-  // changeInfo(letsPlay, GameMessage1);
+
   changeInfo(pickColor, GameMessage2);
-  // messageGame.remove();
+
   resultTable.classList.add("hiddenTable");
 
   chosenColors.forEach((cc) => (cc.style.backgroundColor = "black"));
 
   sectionPlay.scrollIntoView();
 });
-
-// colorEI.addEventListener("click", function (e) {
-//   colorContainer.forEach((c) => (c.style.opacity = 0.3));
-// });
-
-// const messageGame = document.createElement("div");
-// const messageHTML = `You are probably a MBTI`;
-// messageGame.textContent = messageHTML;
-// messageGame.style.fontSize = "5rem";
-// messageGame.style.textAlign = "center";
-// messageGame.style.color = "black";
-// messageGame.style.marginTop = "5rem";
-// messageGame.style.marginBottom = "6rem";
-
-// const gameResultMessage = `Game Result`;
 
 //create pdf with resultTable, create download function;
 
@@ -197,12 +170,11 @@ btnDownload.addEventListener("click", function () {
   throttledDownloadPDF();
 });
 /////////////////////
-
+//play game,choose colors
 colorContainer.forEach((c) =>
   c.addEventListener("click", function (e) {
-    // this.style.display = "none";
     const message1 = e.target.dataset.value;
-    // const message2 = e.target.style.backgroundColor;
+
     const message2 = window.getComputedStyle(e.target).backgroundColor;
     console.log(message1);
     console.log(message2);
@@ -231,9 +203,6 @@ colorContainer.forEach((c) =>
       }
     });
 
-    // const t1 = tableContentDetails[+e.currentTarget.dataset.count - 1];
-    // console.log(t1);
-
     tableContent.forEach((tc) => {
       if (tc.dataset.count === e.currentTarget.dataset.count) {
         const t1 = tableContentDetails[+e.currentTarget.dataset.count - 1];
@@ -254,14 +223,13 @@ colorContainer.forEach((c) =>
   })
 );
 
+//play game, next button function
 const moveNext = function (nextBtn, parentContainer, styleAdd) {
   nextBtn.addEventListener("click", function (e) {
     nextBtn.closest(parentContainer).classList.add(styleAdd);
     if (!nextBtn.closest(parentContainer).nextElementSibling) {
-      // changeInfo(letsPlay, gameResultMessage);
       changeInfo(pickColor);
-      // showInfo(colorBox, messageGame);
-      // nextBtn.closest(".chosenColors").style.display = "none";
+
       chosenColorBox.style.display = "none";
       resultTable.classList.remove("hiddenTable");
       btnDownload.classList.remove("hiddenTable");
@@ -271,23 +239,6 @@ const moveNext = function (nextBtn, parentContainer, styleAdd) {
       .nextElementSibling.classList.remove(styleAdd);
   });
 };
-// moveNext(nextBtn, ".color-btn-containter", "hiddenColor");
-
-// nextBtn.forEach((b) => {
-//   b.addEventListener("click", function (e) {
-//     this.closest(".color-btn-containter").classList.add("hiddenColor");
-//     if (!this.closest(".color-btn-containter").nextElementSibling) {
-//       changeInfo(letsPlay, gameResultMessage);
-//       changeInfo(pickColor);
-//       showInfo(colorBox, messageGame);
-//     }
-//     this.closest(".color-btn-containter").nextElementSibling.classList.remove(
-//       "hiddenColor"
-//     );
-//   });
-// });
-
-// colorBox.append(messageGame);
 
 const changeInfo = function (box, message = "") {
   box.textContent = message;
@@ -301,16 +252,8 @@ const hideInfo = function (box, message) {
   box.removeChild(message);
 };
 
-// window.addEventListener("DOMContentLoaded", function () {
-//   sectionPlay.classList.add("hidden");
-//   window.scrollTo({
-//     top: 0,
-//     left: 0,
-//     behavior: "smooth",
-//   });
-// });
 /////////////
-//survey slider
+//section4 survey slider
 
 btnSurvey.addEventListener("click", function () {
   btnSurvey.closest(".surveyInvite").classList.add("hiddenSurvey");
@@ -364,11 +307,13 @@ const previousSlide = function () {
 btnL.addEventListener("click", previousSlide);
 btnR.addEventListener("click", nextSlide);
 
+//section4 submit button
 btnSubmit.addEventListener("click", function () {
   btnSubmit.parentElement.classList.add("hiddenSurvey");
   btnSubmit.parentElement.nextElementSibling.classList.remove("hiddenSurvey");
 });
 
+//section4 back button
 const btnBack = document.querySelector(".btn-back");
 btnBack.addEventListener("click", function () {
   currclick = 0;
@@ -379,6 +324,7 @@ btnBack.addEventListener("click", function () {
 
 function clearRadioSelection(name) {
   const radios = document.getElementsByName(name);
+  console.log(radios);
   for (let i = 0; i < radios.length; i++) {
     radios[i].checked = false;
   }
@@ -391,12 +337,10 @@ const closeBoxModal = document.querySelectorAll(".close-infoModal");
 const infoModalBox = document.querySelectorAll(".info-modal");
 const openModal = function (infoModal) {
   infoModal.classList.remove("hiddenInfoModal");
-  // overlay.classList.remove('hidden');
 };
 
 const closeModal = function (infoModal) {
   infoModal.classList.add("hiddenInfoModal");
-  // overlay.classList.remove('hidden');
 };
 
 boxOpenModal.forEach((box) => {
