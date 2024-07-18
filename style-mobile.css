@@ -290,6 +290,14 @@ td {
   font-size: 1.2rem;
 }
 
+ul {
+  padding: 0.5rem;
+  text-align: left;
+
+  list-style-position: inside;
+  list-style: none;
+}
+
 /* resultTableMobile */
 
 .download {
@@ -334,7 +342,7 @@ td {
 }
 
 .info-modal p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .close-infoModal {
@@ -530,9 +538,9 @@ iframe {
 
 input[type="radio"] {
   appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
+  width: 1rem;
+  height: 1rem;
+  border: 0.1rem solid black;
   border-radius: 50%;
   outline: none;
   cursor: pointer;
@@ -546,8 +554,8 @@ input[type="radio"]:checked {
 
 input[type="radio"]:checked::before {
   content: "";
-  width: 8px;
-  height: 8px;
+  width: 0.6rem;
+  height: 0.6rem;
   border-radius: 50%;
   background-color: var(--color-theme);
   position: absolute;
